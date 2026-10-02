@@ -11,6 +11,31 @@ function slide(direction) {
     });
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    const slider = document.getElementById('ppt-slider');
+    const pagination = document.getElementById('ppt-pagination');
+
+    if (slider && pagination) {
+        const totalSlides = slider.children.length;
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const index = Array.from(slider.children).indexOf(entry.target) + 1;
+                    pagination.textContent = `${index} / ${totalSlides}`;
+                }
+            });
+        }, {
+            root: slider,
+            threshold: 0.5
+        });
+
+        Array.from(slider.children).forEach(slide => {
+            observer.observe(slide);
+        });
+    }
+});
+
 // Theme Toggle Logic
 function toggleTheme() {
     const html = document.documentElement;

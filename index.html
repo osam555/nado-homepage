@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko" data-theme="dark" data-font-size="medium">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NADO AI 재테크 | 초보자도 쉬운 자동 수익</title>
+    <meta name="description" content="코인을 몰라도 괜찮습니다. 내 계좌에서 AI가 알아서 안전하게 투자해주는 가장 쉬운 자산 관리 솔루션입니다.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">NADO</div>
+        <nav>
+            <ul>
+                <li><a href="#features">3가지 장점</a></li>
+                <li><a href="#profit">수익 비결</a></li>
+                <li><a href="#logic">안전 원칙</a></li>
+                <li><a href="#vision">시작하기</a></li>
+            </ul>
+        </nav>
+        <div class="nav-right">
+            <div class="settings">
+                <div class="font-size-group">
+                    <button onclick="setFontSize('small')" id="btn-font-small" title="작게">A-</button>
+                    <button onclick="setFontSize('medium')" id="btn-font-medium" class="active" title="기본">A</button>
+                    <button onclick="setFontSize('large')" id="btn-font-large" title="크게">A+</button>
+                </div>
+                <button class="theme-toggle" onclick="toggleTheme()" id="btn-theme" title="테마 변경">☀️</button>
+            </div>
+            <button class="cta-btn">무료 상담 신청</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>내 계좌에서 알아서 굴러가는<br><span class="gradient-text">가장 쉬운 AI 재테크</span></h1>
+                <p>코인을 전혀 몰라도 괜찮습니다. 똑똑한 AI가 24시간 대신 투자합니다.<br>내 돈은 내 계좌에 그대로 두고, 매월 들어오는 수익만 확인하세요.</p>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="window.location.href='#features'">어떻게 돈을 버나요?</button>
+                    <button class="btn-secondary" onclick="window.location.href='#logic'">정말 안전한가요?</button>
+                </div>
+            </div>
+            <div class="hero-graphics">
+                <div class="glass-card">
+                    <div class="stat">
+                        <span class="stat-value">20%</span>
+                        <span class="stat-label">월 목표 기대 수익률</span>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <div class="stat">
+                        <span class="stat-value">안전</span>
+                        <span class="stat-label">내 계좌에 내 돈 그대로</span>
+                    </div>
+                </div>
+                <div class="glass-card">
+                    <div class="stat">
+                        <span class="stat-value">365일</span>
+                        <span class="stat-label">쉬지 않는 자동 투자</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="section-features">
+            <h2 class="section-title">투자 초보자를 위한 3가지 약속</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">🔒</div>
+                    <h3>돈을 남에게 맡기지 마세요</h3>
+                    <p>투자 회사에 돈을 입금할 필요가 없습니다. 세계적인 대형 거래소의 <strong>내 개인 계좌</strong>에 돈을 넣어두기만 하면, AI가 그 안에서만 안전하게 굴려줍니다. 회사가 문을 닫아도 내 돈은 내 계좌에 100% 안전하게 남아있습니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🤖</div>
+                    <h3>신경 쓸 일이 전혀 없습니다</h3>
+                    <p>복잡한 차트 분석이나 뉴스 확인은 잊으세요. 똑똑한 AI가 365일 24시간 쉬지 않고 대신 투자합니다. 고객님은 아침에 일어나서 어제 번 수익금만 확인하시면 됩니다.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💳</div>
+                    <h3>체크카드처럼 편하게 쓰세요</h3>
+                    <p>번 돈은 어떻게 쓰냐고요? 전 세계 어디서나 결제하고 현금을 뽑을 수 있는 <strong>전용 페이 카드</strong>를 드립니다. 국내 세금 걱정 없이 체크카드처럼 편하게 바로 사용하세요.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="profit" class="section-profit">
+            <div class="profit-container">
+                <div class="profit-text">
+                    <h2 class="section-title">매월 안정적으로 수익을<br>돌려드릴 수 있는 이유</h2>
+                    <p>NADO는 단순히 투자로만 돈을 버는 것이 아닙니다. 확실한 숨겨진 비결이 있습니다.</p>
+                    <ul class="profit-list">
+                        <li>
+                            <strong>01. AI의 똑똑한 자동 매매</strong>
+                            <p>시장이 오르든 내리든 상관없습니다. AI가 가장 유리한 타이밍을 찾아 매일매일 꾸준하게 수익을 쌓아갑니다.</p>
+                        </li>
+                        <li>
+                            <strong>02. 숨겨진 보너스, 수수료 환급 (핵심!)</strong>
+                            <p>가장 중요한 비결입니다. NADO AI가 매일 수십 번씩 잦은 거래를 대신 해주면, 거래소에서는 감사의 의미로 '수수료 리베이트(환급금)'를 줍니다. 이 환급금이 매우 크기 때문에 고객님들께 매월 20%의 수익을 안정적으로 약속드릴 수 있습니다.</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="profit-visual">
+                    <div class="circle-graph">
+                        <div class="circle inner">매월<br>안정적인<br>수익</div>
+                        <div class="circle outer-1">AI 투자 수익</div>
+                        <div class="circle outer-2">거래소 수수료 환급금</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="logic" class="section-logic">
+            <h2 class="section-title">"대박보다 중요한 건 원금을 지키는 것"</h2>
+            <div class="logic-timeline">
+                <div class="logic-step">
+                    <div class="step-number">01</div>
+                    <h3>깐깐한 종목 고르기</h3>
+                    <p>400개가 넘는 투자 종목 중에서 AI가 가장 안전하고 확실하게 수익이 날 수 있는 종목만 꼼꼼하게 3번 걸러서 골라냅니다.</p>
+                </div>
+                <div class="logic-step">
+                    <div class="step-number">02</div>
+                    <h3>욕심내지 않는 안전한 매매</h3>
+                    <p>조금 오르면 확실하게 수익을 챙기고, 혹시라도 떨어질 것 같으면 손해가 커지기 전에 즉시 빠져나옵니다. 과거 10년간의 데이터를 분석해 <strong>절대로 원금을 크게 잃지 않도록</strong> 설계되었습니다.</p>
+                </div>
+                <div class="logic-step">
+                    <div class="step-number">03</div>
+                    <h3>무리한 투자는 절대 금물</h3>
+                    <p>크게 한탕을 노리는 무리한 투자는 절대 하지 않습니다. 수익이 조금 적더라도 위험을 최소화하는 가장 안전한 방법만 고집합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="vision" class="section-features">
+            <h2 class="section-title">제2의 월급 만들기, 지금 시작하세요</h2>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto; color: var(--text-secondary); font-size: 1.2rem;">
+                <p style="margin-bottom: 1.5rem;">나도(NADO)는 약 1,500만 원 정도의 여유 자금으로 매달 안정적인 두 번째 월급을 만드는 데 최적화되어 있습니다.</p>
+                <p>코인의 '코'자도 몰라도, 차트를 볼 줄 몰라도 전혀 상관없습니다.<br><strong>가장 안전하고 똑똑한 AI 비서가 당신의 자산을 매일매일 불려드립니다.</strong></p>
+                <button class="btn-primary" style="margin-top: 3rem;">무료 상담 받아보기</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">NADO</div>
+            <p>초보자를 위한 가장 쉬운 AI 자산 관리 비서</p>
+            <p class="copyright">&copy; 2026 NADO Trading System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

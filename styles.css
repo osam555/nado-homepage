@@ -622,13 +622,25 @@ footer {
 
     /* Navbar wrap */
     .navbar {
-        flex-wrap: wrap;
+        flex-direction: column;
         padding: 1rem 5%;
+        gap: 1rem;
     }
+    
+    .logo {
+        text-align: center;
+        width: 100%;
+    }
+    
+    .nav-right {
+        width: 100%;
+        justify-content: center;
+    }
+    
     nav {
         order: 3;
         width: 100%;
-        margin-top: 1rem;
+        margin-top: 0;
         display: flex;
         justify-content: center;
         overflow-x: auto;
@@ -640,6 +652,15 @@ footer {
     nav a {
         font-size: 0.95rem;
         white-space: nowrap;
+    }
+
+    .hero {
+        padding-top: 200px;
+        align-items: flex-start; /* Prevent vertical centering from pushing content under navbar */
+    }
+    
+    .hero-content {
+        margin-top: 1rem;
     }
 
     .hero-content h1 {
@@ -674,8 +695,14 @@ footer {
         font-size: 0.9rem;
     }
     
+    .font-size-group button, .theme-toggle {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9rem;
+    }
+    
     .hero {
-        padding-top: 140px;
+        padding-top: 210px;
     }
 
     .hero-content h1 {

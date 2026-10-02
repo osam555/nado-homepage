@@ -1,0 +1,28 @@
+{
+  "name": "nado-homepage",
+  "version": "1.0.0",
+  "description": "NADO AI 재테크 - 초보자도 쉬운 자동 수익 홈페이지",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osam555/nado-homepage.git"
+  },
+  "keywords": [
+    "nado",
+    "ai",
+    "trading",
+    "finance"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/osam555/nado-homepage/issues"
+  },
+  "homepage": "https://github.com/osam555/nado-homepage#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}

@@ -271,33 +271,6 @@ nav a:hover {
     flex-direction: column;
     gap: 1.5rem;
     align-items: flex-end;
-    position: relative;
-    justify-content: center;
-}
-
-.hero-globe {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 140%;
-    max-width: 700px;
-    z-index: 0;
-    opacity: 0.6;
-    mix-blend-mode: screen;
-    animation: rotateGlobe 90s linear infinite;
-    pointer-events: none;
-}
-
-@keyframes rotateGlobe {
-    0% { transform: translate(-50%, -50%) rotate(0deg); }
-    100% { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-[data-theme="light"] .hero-globe {
-    mix-blend-mode: multiply;
-    opacity: 0.2;
-    filter: invert(1) hue-rotate(180deg);
 }
 
 .glass-card, .feature-card, .profit-list li, .logic-step {
@@ -305,8 +278,6 @@ nav a:hover {
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(16px);
     transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
-    position: relative;
-    z-index: 1;
 }
 
 /* Light mode specific shadows for depth */

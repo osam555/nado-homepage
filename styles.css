@@ -562,6 +562,81 @@ footer {
     font-size: 0.9rem;
 }
 
+/* PPT Slider Section */
+.section-ppt {
+    padding: 6rem 5%;
+}
+
+.slider-wrapper {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+
+.slider-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 1rem;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    width: 100%;
+    padding: 1rem 0;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none; /* Chrome */
+}
+
+.slide {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    object-fit: contain;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    width: 100%;
+    height: auto;
+}
+
+[data-theme="light"] .slide {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.prev-btn { left: -24px; }
+.next-btn { right: -24px; }
+
+.slider-btn:hover {
+    background: var(--gradient-primary);
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+    border-color: transparent;
+}
+
 
 /* ==============================================================
    RESPONSIVE DESIGN (모바일 반응형)
@@ -665,6 +740,10 @@ footer {
 
     .hero-content h1 {
         font-size: 2.2rem;
+    }
+    
+    .slider-btn {
+        display: none; /* Hide buttons on mobile, rely on swipe */
     }
     
     .hero-buttons {

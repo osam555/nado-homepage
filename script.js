@@ -1,3 +1,16 @@
+// PPT Slider Logic
+function slide(direction) {
+    const slider = document.getElementById('ppt-slider');
+    if (!slider) return;
+    
+    // Slide by one image width plus gap
+    const scrollAmount = slider.clientWidth;
+    slider.scrollBy({
+        left: direction * scrollAmount,
+        behavior: 'smooth'
+    });
+}
+
 // Theme Toggle Logic
 function toggleTheme() {
     const html = document.documentElement;

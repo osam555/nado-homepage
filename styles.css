@@ -181,6 +181,7 @@ nav a:hover {
     font-weight: 600;
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    white-space: nowrap;
 }
 
 .cta-btn:hover {
@@ -299,7 +300,7 @@ nav a:hover {
     transform: translateX(-40px);
 }
 [data-theme="light"] .glass-card:nth-child(2) {
-    transform: translateX(-40px); /* Keep transform in light mode */
+    transform: translateX(-40px);
 }
 
 .glass-card:nth-child(3) {
@@ -314,11 +315,6 @@ nav a:hover {
 
 .glass-card:nth-child(2) {
     --tx: -40px;
-}
-@media (max-width: 992px) {
-    .glass-card:nth-child(2) {
-        --tx: 0px;
-    }
 }
 
 .stat {
@@ -566,21 +562,24 @@ footer {
     font-size: 0.9rem;
 }
 
-/* Responsive */
-@media (max-width: 992px) {
-    .nav-right {
-        display: none; /* Hide settings on small screens for simplicity, or we can keep it */
-    }
+
+/* ==============================================================
+   RESPONSIVE DESIGN (모바일 반응형)
+   ============================================================== */
+
+@media (max-width: 1024px) {
+/* removed hiding settings */
     
     .hero {
         flex-direction: column;
         justify-content: center;
         text-align: center;
         gap: 4rem;
+        padding-top: 120px;
     }
     
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
     
     .hero-buttons {
@@ -595,7 +594,128 @@ footer {
         flex-wrap: wrap;
     }
     
+    .glass-card:nth-child(2) {
+        --tx: 0px;
+    }
+    [data-theme="light"] .glass-card:nth-child(2) {
+        transform: translateX(0px);
+    }
+    
     .profit-container {
         flex-direction: column;
+    }
+    
+    .profit-text .section-title {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 4rem 5%;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Navbar wrap */
+    .navbar {
+        flex-wrap: wrap;
+        padding: 1rem 5%;
+    }
+    nav {
+        order: 3;
+        width: 100%;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        overflow-x: auto;
+        padding-bottom: 0.5rem;
+    }
+    nav ul {
+        gap: 1.5rem;
+    }
+    nav a {
+        font-size: 0.95rem;
+        white-space: nowrap;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 2rem;
+    }
+
+    .profit-visual {
+        transform: scale(0.8);
+        margin: -40px 0;
+    }
+    
+    .logic-step {
+        padding: 2rem 1.5rem;
+    }
+    
+    .step-number {
+        font-size: 2.5rem;
+        top: 0px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Navbar adjustments for small mobile */
+    .nav-right .cta-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .hero {
+        padding-top: 140px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        padding: 0;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+
+    .glass-card {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    
+    .stat-value {
+        font-size: 2rem;
+    }
+
+    /* Scale down circle graph further */
+    .profit-visual {
+        transform: scale(0.65);
+        margin: -70px 0;
+    }
+    
+    .logic-step h3 {
+        font-size: 1.3rem;
+    }
+    
+    .feature-card {
+        padding: 2rem 1.5rem;
     }
 }

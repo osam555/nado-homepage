@@ -3,12 +3,20 @@ function slide(direction) {
     const slider = document.getElementById('ppt-slider');
     if (!slider) return;
     
-    // Slide by one image width plus gap
     const scrollAmount = slider.clientWidth;
-    slider.scrollBy({
-        left: direction * scrollAmount,
-        behavior: 'smooth'
-    });
+    const maxScroll = slider.scrollWidth - slider.clientWidth;
+    
+    // Check if we are at the boundaries
+    if (direction === 1 && slider.scrollLeft >= maxScroll - 10) {
+        // At the last slide, go back to the first
+        slider.scrollTo({ left: 0, behavior: 'smooth' });
+    } else if (direction === -1 && slider.scrollLeft <= 10) {
+        // At the first slide, go to the last
+        slider.scrollTo({ left: maxScroll, behavior: 'smooth' });
+    } else {
+        // Normal sliding
+        slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -15,6 +15,7 @@
     <meta property="og:site_name" content="NADO">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
 </head>
 
 <body>
@@ -82,11 +83,14 @@
                     전체화면 보기
                 </button>
             </div>
-            <div class="pdf-wrapper">
-                <iframe src="NADO_트레이딩_시스템.pdf#view=FitH&toolbar=0" id="pdf-frame" class="pdf-embed" title="NADO 상세 자료" allowfullscreen></iframe>
-                <div class="pdf-fallback">
-                    <p>PDF 미리보기를 지원하지 않는 브라우저입니다.</p>
-                    <a href="NADO_트레이딩_시스템.pdf" target="_blank" class="btn-primary">상세 자료 다운로드 (PDF)</a>
+            <div id="pdf-viewer-container" class="pdf-viewer-container">
+                <div class="canvas-container">
+                    <canvas id="pdf-render"></canvas>
+                </div>
+                <div class="slider-controls">
+                    <button class="control-btn" id="prev-page" aria-label="이전 슬라이드">&#10094;</button>
+                    <div class="slider-pagination"><span id="page-num">1</span> / <span id="page-count">--</span></div>
+                    <button class="control-btn" id="next-page" aria-label="다음 슬라이드">&#10095;</button>
                 </div>
             </div>
         </section>

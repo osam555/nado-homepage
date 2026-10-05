@@ -1,17 +1,97 @@
-// PDF Fullscreen Logic
+// PDF.js Logic
+const url = 'NADO_트레이딩_시스템.pdf';
+
+let pdfDoc = null,
+    pageNum = 1,
+    pageIsRendering = false,
+    pageNumIsPending = null;
+
+const scale = 2.0, // High res for sharp rendering
+      canvas = document.querySelector('#pdf-render'),
+      ctx = canvas ? canvas.getContext('2d') : null;
+
+if (canvas) {
+    // Configure worker
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+
+    // Render the page
+    const renderPage = num => {
+        pageIsRendering = true;
+
+        pdfDoc.getPage(num).then(page => {
+            const viewport = page.getViewport({ scale });
+            canvas.height = viewport.height;
+            canvas.width = viewport.width;
+
+            const renderCtx = {
+                canvasContext: ctx,
+                viewport
+            };
+
+            page.render(renderCtx).promise.then(() => {
+                pageIsRendering = false;
+
+                if (pageNumIsPending !== null) {
+                    renderPage(pageNumIsPending);
+                    pageNumIsPending = null;
+                }
+            });
+
+            document.querySelector('#page-num').textContent = num;
+        });
+    };
+
+    const queueRenderPage = num => {
+        if (pageIsRendering) {
+            pageNumIsPending = num;
+        } else {
+            renderPage(num);
+        }
+    };
+
+    const showPrevPage = () => {
+        if (pageNum <= 1) {
+            pageNum = pdfDoc.numPages; // Loop to end
+        } else {
+            pageNum--;
+        }
+        queueRenderPage(pageNum);
+    };
+
+    const showNextPage = () => {
+        if (pageNum >= pdfDoc.numPages) {
+            pageNum = 1; // Loop to start
+        } else {
+            pageNum++;
+        }
+        queueRenderPage(pageNum);
+    };
+
+    // Load PDF
+    pdfjsLib.getDocument(url).promise.then(pdfDoc_ => {
+        pdfDoc = pdfDoc_;
+        document.querySelector('#page-count').textContent = pdfDoc.numPages;
+        renderPage(pageNum);
+    }).catch(err => {
+        console.error("PDF load error:", err);
+    });
+
+    // Button Events
+    document.querySelector('#prev-page').addEventListener('click', showPrevPage);
+    document.querySelector('#next-page').addEventListener('click', showNextPage);
+}
+
+// Fullscreen Logic
 function openFullscreen() {
-    const iframe = document.getElementById("pdf-frame");
-    if (!iframe) return;
+    const container = document.getElementById("pdf-viewer-container");
+    if (!container) return;
     
-    if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-    } else if (iframe.webkitRequestFullscreen) { /* Safari */
-        iframe.webkitRequestFullscreen();
-    } else if (iframe.msRequestFullscreen) { /* IE11 */
-        iframe.msRequestFullscreen();
-    } else {
-        // Fallback for browsers that don't support fullscreen API (e.g. some iOS browsers)
-        window.open("NADO_트레이딩_시스템.pdf", "_blank");
+    if (container.requestFullscreen) {
+        container.requestFullscreen();
+    } else if (container.webkitRequestFullscreen) { /* Safari */
+        container.webkitRequestFullscreen();
+    } else if (container.msRequestFullscreen) { /* IE11 */
+        container.msRequestFullscreen();
     }
 }
 

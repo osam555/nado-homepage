@@ -567,87 +567,39 @@ footer {
     padding: 6rem 5%;
 }
 
-.slider-wrapper {
+.pdf-wrapper {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
-    display: flex;
-    align-items: center;
-}
-
-.slider-container {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    gap: 1rem;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE and Edge */
-    width: 100%;
-    padding: 1rem 0;
-}
-
-.slider-container::-webkit-scrollbar {
-    display: none; /* Chrome */
-}
-
-.slide {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
     border-radius: 16px;
+    overflow: hidden;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    object-fit: contain;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    /* For aspect ratio */
+    height: 70vh;
+    min-height: 500px;
+    max-height: 800px;
+}
+
+.pdf-embed {
     width: 100%;
-    height: auto;
+    height: 100%;
+    border: none;
+    display: block;
 }
 
-[data-theme="light"] .slide {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+.pdf-fallback {
+    display: none; /* Hide by default, show if iframe fails or on specific mobile views if needed */
+    padding: 3rem;
+    text-align: center;
 }
 
-.slider-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-}
-
-.control-btn {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    color: var(--text-primary);
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.control-btn:hover {
-    background: var(--gradient-primary);
-    color: white;
-    border-color: transparent;
-    transform: scale(1.1);
-}
-
-.slider-pagination {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    background: var(--glass-bg);
-    display: inline-block;
-    padding: 0.5rem 1.5rem;
-    border-radius: 20px;
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
+@media (max-width: 768px) {
+    .pdf-wrapper {
+        height: 60vh;
+        min-height: 400px;
+    }
 }
 
 

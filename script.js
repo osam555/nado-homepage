@@ -1,3 +1,20 @@
+// PDF Fullscreen Logic
+function openFullscreen() {
+    const iframe = document.getElementById("pdf-frame");
+    if (!iframe) return;
+    
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) { /* Safari */
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) { /* IE11 */
+        iframe.msRequestFullscreen();
+    } else {
+        // Fallback for browsers that don't support fullscreen API (e.g. some iOS browsers)
+        window.open("NADO_트레이딩_시스템.pdf", "_blank");
+    }
+}
+
 // Theme Toggle Logic
 function toggleTheme() {
     const html = document.documentElement;

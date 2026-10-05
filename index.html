@@ -76,8 +76,14 @@
 
         <section id="presentation" class="section-ppt">
             <h2 class="section-title">NADO 상세 자료</h2>
+            <div class="pdf-controls" style="text-align: right; max-width: 1000px; margin: 0 auto 1rem auto;">
+                <button onclick="openFullscreen()" class="btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg>
+                    전체화면 보기
+                </button>
+            </div>
             <div class="pdf-wrapper">
-                <iframe src="NADO_트레이딩_시스템.pdf#view=FitH&toolbar=0" class="pdf-embed" title="NADO 상세 자료"></iframe>
+                <iframe src="NADO_트레이딩_시스템.pdf#view=FitH&toolbar=0" id="pdf-frame" class="pdf-embed" title="NADO 상세 자료" allowfullscreen></iframe>
                 <div class="pdf-fallback">
                     <p>PDF 미리보기를 지원하지 않는 브라우저입니다.</p>
                     <a href="NADO_트레이딩_시스템.pdf" target="_blank" class="btn-primary">상세 자료 다운로드 (PDF)</a>

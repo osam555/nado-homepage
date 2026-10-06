@@ -79,6 +79,34 @@ if (canvas) {
     // Button Events
     document.querySelector('#prev-page').addEventListener('click', showPrevPage);
     document.querySelector('#next-page').addEventListener('click', showNextPage);
+
+    // Swipe Gestures for Mobile/Tablet
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    const canvasContainer = document.querySelector('.canvas-container');
+    
+    if (canvasContainer) {
+        canvasContainer.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        canvasContainer.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+    }
+
+    function handleSwipe() {
+        const threshold = 50; // minimum distance to be considered a swipe
+        if (touchEndX + threshold < touchStartX) {
+            // Swiped Left -> Next Page
+            showNextPage();
+        } else if (touchEndX > touchStartX + threshold) {
+            // Swiped Right -> Prev Page
+            showPrevPage();
+        }
+    }
 }
 
 // Fullscreen Logic

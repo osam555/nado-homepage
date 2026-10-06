@@ -79,6 +79,12 @@ if (canvas) {
     // Button Events
     document.querySelector('#prev-page').addEventListener('click', showPrevPage);
     document.querySelector('#next-page').addEventListener('click', showNextPage);
+    
+    // Side Arrow Events
+    const prevArrow = document.querySelector('#prev-page-arrow');
+    const nextArrow = document.querySelector('#next-page-arrow');
+    if (prevArrow) prevArrow.addEventListener('click', showPrevPage);
+    if (nextArrow) nextArrow.addEventListener('click', showNextPage);
 
     // Swipe Gestures for Mobile/Tablet
     let touchStartX = 0;

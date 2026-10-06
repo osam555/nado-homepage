@@ -84,6 +84,9 @@
                 </button>
             </div>
             <div id="pdf-viewer-container" class="pdf-viewer-container">
+                <button class="exit-fullscreen-btn" onclick="closeFullscreen()" aria-label="전체화면 닫기" title="전체화면 닫기">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
                 <div class="canvas-container" style="position: relative;">
                     <button class="nav-arrow left-arrow" id="prev-page-arrow" aria-label="이전 슬라이드">&#10094;</button>
                     <canvas id="pdf-render"></canvas>

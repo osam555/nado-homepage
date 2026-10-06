@@ -576,6 +576,7 @@ footer {
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .pdf-viewer-container:fullscreen {
@@ -589,6 +590,38 @@ footer {
     border: none;
     border-radius: 0;
     max-width: 100%;
+}
+
+.exit-fullscreen-btn {
+    display: none;
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 20;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.exit-fullscreen-btn:hover {
+    background: var(--gradient-primary);
+    transform: scale(1.1);
+    border-color: transparent;
+}
+
+.pdf-viewer-container:fullscreen .exit-fullscreen-btn {
+    display: flex;
+}
+.pdf-viewer-container:-webkit-full-screen .exit-fullscreen-btn {
+    display: flex;
 }
 
 .canvas-container {
